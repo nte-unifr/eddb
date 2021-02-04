@@ -1,6 +1,6 @@
 <template>
   <article>
-    <Breadcrumb page="About the project" />
+    <VBreadcrumb page="About the project" />
     <section class="section">
       <div class="container">
         <h1 class="title">Callisto</h1>

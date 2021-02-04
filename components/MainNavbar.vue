@@ -26,7 +26,7 @@
 
         <div class="navbar-end">
           <a class="navbar-item" @click="displayInfo">
-            <Feather icon="database" />
+            <VIcon icon="database" />
           </a>
           <div class="navbar-item">
             <div class="buttons">
