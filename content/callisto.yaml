@@ -1,0 +1,29 @@
+title: Callisto
+subtitle: Iconography of Play and Games
+dateFormat: [BCE, CE]
+item:
+  resource: '/items/Fiches'
+  title: titre
+  description: description
+  fields: 
+    # mandatory : name, type (title, description, prop, info, date, image)
+    - { name: titre, type: title }
+    - { name: description, type: description }
+    - { name: periode, type: prop, accessor: nom, tag: true }
+    - { name: materiau, type: prop, accessor: nom, tag: true }
+    - { name: categorie, type: prop, accessor: nom, tag: true }
+    - { name: forme, type: prop, accessor: nom, tag: true }
+    - { name: sujets, type: prop, accessor: sujet.nom, multi: true, tag: true }
+    - { name: dimensions, type: prop }
+    - { name: lieu_de_decouverte, type: prop }
+    - { name: lieu_de_conservation, type: prop }
+    - { name: centre_producteur, type: prop, accessor: nom }
+    - { name: sources, type: info }
+    - { name: bibliographie, type: info }
+    - { name: datation_debut, type: date, sort: 0 }
+    - { name: datation_fin, type: date, sort: 1 }
+    - { name: image, type: image, accessor: private_hash, meta: 'main' }
+    - { name: image_publique, type: image, meta: 'condition' }
+  images: 
+    main: image.private_hash
+    condition: image_publique

@@ -1,7 +1,6 @@
 <template>
   <div>
-    <MainNavbar />
-    <EddbInfo />
-    <Nuxt />
+    <TheNavbar />
+    <Nuxt keep-alive />
   </div>
 </template>

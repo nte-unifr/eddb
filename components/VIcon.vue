@@ -2,6 +2,7 @@
   <svg
     :width="width"
     :height="height"
+    :stroke-width="strokeWidth"
     class="feather">
     <use :xlink:href="require('@/assets/svg/feather-sprite.svg') + `#${icon}`"></use>
   </svg>
@@ -21,6 +22,10 @@ export default {
     height: {
       type: Number,
       default: 24
+    },
+    strokeWidth: {
+      type: Number,
+      default: 2
     }
   }
 }
@@ -29,7 +34,6 @@ export default {
 <style lang="scss" scoped>
   .feather {
     stroke: currentColor;
-    stroke-width: 2;
     stroke-linecap: round;
     stroke-linejoin: round;
     fill: none;

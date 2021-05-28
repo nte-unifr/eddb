@@ -1,7 +1,7 @@
 @charset "utf-8";
 
-// Import a Google Font
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+@import "../../node_modules/@fontsource/nunito/400.css";
+@import "../../node_modules/@fontsource/nunito/700.css";
 
 // Set your brand colors
 $blue-dark: #00134a;
@@ -15,9 +15,8 @@ $family-sans-serif: "Nunito", sans-serif;
 $grey-dark: $brown;
 $grey-light: $beige-light;
 $primary: $blue-dark;
-$link: $blue-light;
-$widescreen-enabled: false;
-$fullhd-enabled: false;
+$link: $blue-dark;
+$info: $blue-light;
 
 // Update some of Bulma's component variables
 $body-background-color: $beige-lighter;
@@ -27,3 +26,24 @@ $input-shadow: none;
 
 // Import Bulma
 @import "../../node_modules/bulma/bulma.sass";
+
+.has-border-bottom {
+  border-bottom: 1px solid $blue-dark;
+}
+
+.card-footer-item.is-active {
+  background: $blue-dark;
+  color: #fff;
+}
+
+.card-content.has-ribbon {
+  position: relative;
+  padding: 1.9rem 1.5rem;
+  .ribbon {
+    position: absolute;
+    top: 0.5em;
+    right: 0;
+    height: 22px;
+    z-index: 1;
+  }
+}
