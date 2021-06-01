@@ -14,8 +14,8 @@ import { mapState } from "vuex"
 
 export default {
   computed: {
-    ...mapState({
-      informations: state => state.item.item.informations
+    ...mapState('item', {
+      informations: state => state.item.informations
     })
   }
 }

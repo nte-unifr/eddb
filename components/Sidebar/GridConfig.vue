@@ -35,11 +35,7 @@ import { mapMutations } from 'vuex'
 
 export default {
   methods: {
-    ...mapMutations({
-      toggleImage: 'config/grid/toggleImage',
-      toggleDescription: 'config/grid/toggleDescription',
-      toggleTags: 'config/grid/toggleTags'
-    })
+    ...mapMutations('config/grid', ['toggleImage', 'toggleDescription', 'toggleTags'])
   }
 }
 </script>

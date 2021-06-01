@@ -33,9 +33,9 @@ import { mapState } from "vuex"
 
 export default {
   computed: {
-    ...mapState({
-      id: state => state.item.item.id,
-      images: state => state.item.item.images
+    ...mapState('item', {
+      id: state => state.item.id,
+      images: state => state.item.images
     })
   },
   async asyncData({ store, params }) {

@@ -7,8 +7,8 @@ import { mapState } from "vuex"
 
 export default {
   computed: {
-    ...mapState({
-      title: state => state.item.item.title
+    ...mapState('item', {
+      title: state => state.item.title
     })
   }
 }

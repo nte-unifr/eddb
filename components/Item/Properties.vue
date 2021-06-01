@@ -18,9 +18,9 @@ import { mapState } from "vuex"
 
 export default {
   computed: {
-    ...mapState({
-      dates: state => state.item.item.dates,
-      properties: state => state.item.item.properties
+    ...mapState('item', {
+      dates: state => state.item.dates,
+      properties: state => state.item.properties
     })
   }
 }

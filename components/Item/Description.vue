@@ -9,9 +9,9 @@ import { mapState } from "vuex"
 
 export default {
   computed: {
-    ...mapState({
-      description: state => state.item.item.description
-    })
+    ...mapState('item', {
+      description: state => state.item.description,
+    }),
   }
 }
 </script>

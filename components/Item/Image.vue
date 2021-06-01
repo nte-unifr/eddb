@@ -16,9 +16,9 @@ export default {
       const fit = 'contain'
       return `${baseURL}/assets/${this.images[0]}?w=${width}&h=${height}&q=${quality}&f=${fit}`
     },
-    ...mapState({
-      images: state => state.item.item.images
-    })
+    ...mapState('item', {
+      images: state => state.item.images
+    }),
   }
 }
 </script>
