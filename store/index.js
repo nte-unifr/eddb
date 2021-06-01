@@ -41,14 +41,7 @@ export const mutations = {
   setItems(state, items) {
     state.items = items
   },
-  sortByTitle(state) {
-    const order = 'title'
-    state.items = _.sortBy(state.items, order)
-    state.order = order
-  },
-  sortById (state) {
-    const order = 'id'
-    state.items = _.sortBy(state.items, order)
+  setOrder(state, order) {
     state.order = order
   },
   setPage (state, page) {
@@ -144,5 +137,17 @@ export const actions = {
   },
   clearSearch ({ commit }) {
     commit('setSearch', '')
+  },
+  sortByTitle ({ commit, state }) {
+    const order = 'title'
+    const items = _.sortBy(state.items, order)
+    commit('setItems', items)
+    commit('setOrder', order)
+  },
+  sortById ({ commit, state }) {
+    const order = 'id'
+    const items = _.sortBy(state.items, order)
+    commit('setItems', items)
+    commit('setOrder', order)
   }
 }
