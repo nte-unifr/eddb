@@ -4,7 +4,7 @@ export default (fields) => {
   return _
     .chain(fields)
     .filter((o) => {
-      return o.type === 'prop' && !_.isNil(o.val)
+      return o.type === 'prop' && !_.isEmpty(o.val)
     })
     .map((o) => {
       return {
