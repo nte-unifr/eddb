@@ -25,10 +25,9 @@
         </div>
 
         <div class="navbar-end">
-          <a class="navbar-item">
+          <a class="navbar-item" @click="displayQuickAccess">
             <VIcon icon="zap" />
           </a>
-          <VInfo buttonClass="navbar-item" />
           <div class="navbar-item">
             <div class="buttons">
               <NuxtLink to="/about" class="button is-primary">
@@ -43,6 +42,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   data() {
     return {
@@ -51,6 +52,11 @@ export default {
         subtitle: 'EDDB database'
       }
     }
+  },
+  methods: {
+    ...mapActions({
+      displayQuickAccess: 'config/quickaccess/display'
+    })
   },
   async fetch() {
     this.project = await this.$content(this.$config.project).fetch()
