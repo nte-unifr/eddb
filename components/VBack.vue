@@ -5,8 +5,19 @@
         <span class="icon">
           <VIcon icon="arrow-left" />
         </span>
-        <span>Back to results</span>
+        <span>{{ title }}</span>
       </span>
     </NuxtLink>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    title: {
+      type: String,
+      default: 'Back to results'
+    }
+  }
+}
+</script>

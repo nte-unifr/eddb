@@ -1,0 +1,1 @@
+*EDDB* standing for *Educational Databases*, is a project of the NTE Center providing teachers and researchers with fast setup databases for research and teaching.

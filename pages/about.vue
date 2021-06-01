@@ -1,29 +1,65 @@
 <template>
   <article class="container">
+    <VBack title="Back to database" />
     <section class="section">
-      <VBreadcrumb sub="Home" page="About the project" />
+      <article class="message is-dark">
+        <div class="message-body">
+          <div class="columns">
+            <div class="column">
+              <nuxt-content :document="about" />
+              <a href="https://www.unifr.ch/nte/fr/contact.html" class="mt-2 button is-primary">Request an EDDB</a>
+            </div>
+            <div class="column is-narrow">
+              <figure class="image logo-eddb">
+                <img src="~/assets/images/logo-eddb.png" />
+              </figure>
+            </div>
+          </div>
+        </div>
+      </article>
     </section>
     <section class="section">
-      <h1 class="title">Callisto</h1>
+      <h1 class="title">{{ project }}</h1>
       <h2 class="subtitle">About the project</h2>
-      <p class="block">
-        The Callisto Database was set up in 2010 by the eponymous research team of Fribourg University focusing on material culture and visual/textual representations of children in ancient societies. The ERC project Locus Ludi is now vastly expanding the database which will include all iconographic resources useful for teaching and research on play and game culture, involving animals, children and adults, men and women, heroes and gods, through the lenses of gender studies, cultural history, and anthropology.
-      </p>
-      <p class="block">
-        Callisto is an important collaborative tool for the renewal of research on ancient ludic culture as the fabric of past societies. It brings together a wide set of visual material from the birth of the Greek city-state c. 800 BCE to the end of the Western Roman Empire, c. 500 CE . These documents are often inaccessible and/or unknown. Each entry includes a detailed commentary of the object which reflects different interpretations and links to downloadable scientific papers (PDF).
-      </p>
-      <p class="block">
-        This database is part of the Locus Ludi project that has received funding from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (Grant agreement No. 741520) 
-      </p>
-      <figure class="image">
-        <img src="~/assets/images/logo-erc.png" />
-      </figure>
+      <div class="content">
+        <nuxt-content :document="aboutProject" />
+      </div>
+      <div class="columns">
+        <div class="column">
+          <figure class="image erc">
+            <img src="~/assets/images/logo-erc.png" />
+          </figure>
+        </div>
+        <div class="column fns">
+        </div>
+      </div>
     </section>
   </article>
 </template>
 
+<script>
+export default {
+  async asyncData({ $config, $content }) {
+    const project = $config.project
+    const about = await $content('about').fetch()
+    const aboutProject = await $content(`${project}-about`).fetch()
+
+    return {
+      project, about, aboutProject
+    }
+  }
+}
+</script>
+
 <style lang="scss" scoped>
-  .image {
+  h1 {
+    text-transform: capitalize;
+  }
+  .logo-eddb {
+    width: 200px;
+    height: 100px;
+  }
+  .erc,.fns img {
     width: 50%;
   }
 </style>
