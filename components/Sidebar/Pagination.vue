@@ -12,22 +12,22 @@
       </p>
     </header>
     <footer class="card-footer">
-      <a class="card-footer-item" @click="this.goToFirstPage">
+      <a class="card-footer-item" @click="this.first">
         <span class="icon">
           <VIcon icon="chevrons-left" />
         </span>
       </a>
-      <a class="card-footer-item" @click="this.goToPrevPage">
+      <a class="card-footer-item" @click="this.prev">
         <span class="icon">
           <VIcon icon="chevron-left" />
         </span>
       </a>
-      <a class="card-footer-item" @click="this.goToNextPage">
+      <a class="card-footer-item" @click="this.next">
         <span class="icon">
           <VIcon icon="chevron-right" />
         </span>
       </a>
-      <a class="card-footer-item" @click="this.goToLastPage">
+      <a class="card-footer-item" @click="this.last">
         <span class="icon">
           <VIcon icon="chevrons-right" />
         </span>
@@ -45,7 +45,26 @@ export default {
     ...mapGetters(['pages', 'total', 'fTotal'])
   },
   methods: {
-    ...mapActions(['goToNextPage', 'goToPrevPage', 'goToFirstPage', 'goToLastPage'])
+    ...mapActions(['goToNextPage', 'goToPrevPage', 'goToFirstPage', 'goToLastPage']),
+    next () {
+      this.goToNextPage()
+      this.scrollToTop()
+    },
+    prev () {
+      this.goToPrevPage()
+      this.scrollToTop()
+    },
+    first () {
+      this.goToFirstPage()
+      this.scrollToTop()
+    },
+    last () {
+      this.goToLastPage()
+      this.scrollToTop()
+    },
+    scrollToTop () {
+      window.scrollTo(0,0)
+    }
   },
 
 }
