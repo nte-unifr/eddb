@@ -3,7 +3,7 @@
     <div class="columns">
       <div class="column">
         <div class="columns is-multiline">
-          <GridItem v-for="item in kItems" :key="item.id" :id="item.id" :title="item.title" :description="item.description" :tags="item.tags" />
+          <GridItem v-for="item in kItems" :key="item.id" :item="item" />
         </div>
       </div>
       <div class="column is-one-fifth">

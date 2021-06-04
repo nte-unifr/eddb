@@ -2,15 +2,15 @@
   <div class="column is-full-mobile is-half-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
     <div class="card">
       <div class="card-image">
-        <GridItemImage image="" />
+        <GridItemImage :image="item.images[0]" />
       </div>
       <div class="card-content">
-        <GridItemTitle :id="id" :title="title" />
-        <VKey :id="id" />
+        <GridItemTitle :id="item.id" :title="item.title" />
+        <VKey :id="item.id" />
         <div class="mb-4">
-          <GridItemDescription :description="description" />
+          <GridItemDescription :description="item.description" />
         </div>
-        <GridItemTags :tags="tags" />
+        <GridItemTags :tags="item.tags" />
       </div>
     </div>
   </div>
@@ -19,21 +19,9 @@
 <script>
 export default {
   props: {
-    id: {
-      type: Number,
-      default: 0
-    },
-    title: {
-      type: String,
-      default: ''
-    },
-    description: {
-      type: String,
-      default: ''
-    },
-    tags: {
-      type: Array,
-      default: () => []
+    item: {
+      type: Object,
+      default: () => {}
     }
   }
 }

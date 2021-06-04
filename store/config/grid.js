@@ -5,6 +5,9 @@ export const state = () => ({
 })
 
 export const mutations = {
+  setImage (state, val) {
+    state.image = val
+  },
   toggleImage (state) {
     state.image = !state.image
   },
