@@ -8,7 +8,7 @@
         <GridItemTitle :id="item.id" :title="item.title" />
         <VKey :id="item.id" />
         <div class="mb-4">
-          <GridItemDescription :description="item.description" />
+          <GridItemDescription :description="item.summary" />
         </div>
         <GridItemTags :tags="item.tags" />
       </div>

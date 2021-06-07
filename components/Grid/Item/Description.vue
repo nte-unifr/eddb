@@ -1,5 +1,7 @@
 <template>
-  <p v-html="description" v-bind:class="{ 'is-hidden': isHidden }"></p>
+  <p v-bind:class="{ 'is-hidden': isHidden }">
+    {{ description }}
+  </p>
 </template>
 
 <script>
@@ -17,11 +19,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-  p {
-    max-height: 6rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-</style>
