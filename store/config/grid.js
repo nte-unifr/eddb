@@ -1,5 +1,5 @@
 export const state = () => ({
-  image: true,
+  image: false,
   description: true,
   tags: true
 })
@@ -8,13 +8,22 @@ export const mutations = {
   setImage (state, val) {
     state.image = val
   },
-  toggleImage (state) {
-    state.image = !state.image
+  setDescription (state, val) {
+    state.description = val
   },
-  toggleDescription (state) {
-    state.description = !state.description
+  setTags (state, val) {
+    state.tags = val
+  }
+}
+
+export const actions = {
+  toggleImage ({ commit, state }) {
+    commit('setImage', !state.image)
   },
-  toggleTags (state) {
-    state.tags = !state.tags
+  toggleDescription ({ commit, state }) {
+    commit('setDescription', !state.description)
+  },
+  toggleTags ({ commit, state }) {
+    commit('setTags', !state.tags)
   }
 }

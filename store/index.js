@@ -7,8 +7,7 @@ export const state = () => ({
   filters: [],
   filtersPool: [],
   page: 1,
-  perPage: 104,
-  imgRatio: 0
+  perPage: 104
 })
 
 export const getters = {
@@ -65,8 +64,6 @@ export const actions = {
       const res = await this.$repositories.item.index()
       const { data } = res
       const items = await this.$apiarist.item.buildItems(data)
-      const itemsWImages = _.filter(items, (i) => { return i.images.length > 0 })
-      const imgRatio = itemsWImages.length * 100 / items.length
       const filters = _
         .chain(items)
         .map('tags')
@@ -76,7 +73,6 @@ export const actions = {
         .value()
       commit('setItems', items)
       commit('setFiltersPool', filters)
-      commit('config/grid/setImage', imgRatio > 50)
     }
   },
   goToNextPage ({ commit, state, getters }) {
