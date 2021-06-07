@@ -1,7 +1,13 @@
 export default {
   target: 'static',
   router: {
-    base: '/nightly'
+    base: '/nightly',
+    extendRoutes(routes, resolve) {
+      routes.push({
+        path: '/fiche/:id',
+        redirect: '/item/:id'
+      })
+    }
   },
   components: true,
   head: {
