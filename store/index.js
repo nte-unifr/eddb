@@ -7,7 +7,7 @@ export const state = () => ({
   filters: [],
   filtersPool: [],
   page: 1,
-  perPage: 52,
+  perPage: 104,
   imgRatio: 0
 })
 
@@ -35,7 +35,7 @@ export const getters = {
   fTotal: (_state, getters) => getters.fItems.length,
   order: state => state.order,
   search: state => state.search,
-  pages: (_state, getters) => _.ceil(getters.fItems.length / 52)
+  pages: (state, getters) => _.ceil(getters.fItems.length / state.perPage)
 }
 
 export const mutations = {
