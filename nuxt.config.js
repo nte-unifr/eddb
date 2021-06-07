@@ -19,7 +19,6 @@ export default {
     '@nuxt/content'
   ],
   plugins: [
-    '~/plugins/vue-fragment.js',
     '~/plugins/repositories.js',
     '~/plugins/apiarist.js'
   ],
