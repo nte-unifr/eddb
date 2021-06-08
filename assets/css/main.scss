@@ -32,6 +32,10 @@ $input-shadow: none;
   border-bottom: 1px solid $blue-dark;
 }
 
+.card-header-icon {
+  cursor: default;
+}
+
 .card-footer-item.is-active {
   background: $blue-dark;
   color: #fff;
