@@ -1,7 +1,7 @@
 export default {
   target: 'static',
   router: {
-    base: '/nightly',
+    base: '/' + process.env.PROJECT,
     extendRoutes(routes, resolve) {
       routes.push({
         path: '/fiche/:id',
