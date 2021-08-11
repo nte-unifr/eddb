@@ -34,5 +34,10 @@ export default {
   publicRuntimeConfig: {
     project: process.env.PROJECT,
     baseURL: process.env.URL + process.env.PROJECT
+  },
+  build: {
+    babel: {
+      plugins: [['@babel/plugin-proposal-private-property-in-object', { loose: true }]],
+    }
   }
 }
