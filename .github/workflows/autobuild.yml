@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Autobuild
 on: workflow_dispatch
 jobs:
   build:
