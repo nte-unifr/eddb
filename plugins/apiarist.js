@@ -1,4 +1,4 @@
-import Apiarist from "~/repositories/Apiarist.js"
+import Apiarist from "repositories/Apiarist.js"
 
 export default async (ctx, inject) => {
   const project = ctx.$config.project

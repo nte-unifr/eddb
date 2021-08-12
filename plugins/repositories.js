@@ -1,4 +1,4 @@
-import Repository from '~/repositories/Repository'
+import Repository from 'repositories/Repository'
 
 export default async (ctx, inject) => {
   const project = ctx.$config.project

@@ -1,12 +1,12 @@
 import _ from "lodash"
-import mapping from "~/repositories/Drones/MapDrone.js"
-import DescriptionBee from "~/repositories/Bees/DescriptionBee.js"
-import SummaryBee from "~/repositories/Bees/SummaryBee.js"
-import DatesBee from "~/repositories/Bees/DatesBee.js"
-import ImagesBee from "~/repositories/Bees/ImagesBee.js"
-import InfosBee from "~/repositories/Bees/InfosBee.js"
-import PropsBee from "~/repositories/Bees/PropsBee.js"
-import TagsBee from "~/repositories/Bees/TagsBee.js"
+import mapping from "repositories/Drones/MapDrone.js"
+import DescriptionBee from "repositories/Bees/DescriptionBee.js"
+import SummaryBee from "repositories/Bees/SummaryBee.js"
+import DatesBee from "repositories/Bees/DatesBee.js"
+import ImagesBee from "repositories/Bees/ImagesBee.js"
+import InfosBee from "repositories/Bees/InfosBee.js"
+import PropsBee from "repositories/Bees/PropsBee.js"
+import TagsBee from "repositories/Bees/TagsBee.js"
 
 export default (config, dateFormat) => ({
   buildItems(items) {

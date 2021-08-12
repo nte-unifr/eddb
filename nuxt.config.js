@@ -1,3 +1,5 @@
+import { resolve } from 'path'
+
 export default {
   target: 'static',
   router: {
@@ -39,5 +41,8 @@ export default {
     babel: {
       plugins: [['@babel/plugin-proposal-private-property-in-object', { loose: true }]],
     }
+  },
+  alias: {
+    'repositories': resolve(__dirname, './repositories')
   }
 }

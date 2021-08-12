@@ -1,5 +1,5 @@
 import _ from "lodash"
-import { queryPath } from "~/repositories/Drones/PathDrone.js"
+import { queryPath } from "repositories/Drones/PathDrone.js"
 
 const limit = '&limit=-1'
 const filters = '&status=published'

@@ -1,6 +1,6 @@
 import _ from "lodash"
 import { sentenceCase } from "sentence-case"
-import { path } from "~/repositories/Drones/PathDrone.js"
+import { path } from "repositories/Drones/PathDrone.js"
 
 export default (item, fields) => {
   return _.map(fields, (o) => {
