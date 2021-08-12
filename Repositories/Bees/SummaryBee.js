@@ -1,6 +1,6 @@
 import _ from "lodash"
 import sanitizeHtml from "sanitize-html"
-import DescriptionBee from "~/Repositories/Bees/DescriptionBee.js"
+import DescriptionBee from "~/repositories/Bees/DescriptionBee.js"
 
 export default (fields) => {
   const description = DescriptionBee(fields)
