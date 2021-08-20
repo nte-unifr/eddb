@@ -1,4 +1,6 @@
-name: Autobuild
+name: Autobuild Callisto
+env:
+  PROJECT: callisto
 on: workflow_dispatch
 jobs:
   build:
@@ -10,6 +12,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14.x'
+      - name: Set project env
+        run: mv ${{GITHUB_WORKSPACE}}.env.${{PROJECT}} .env
       - name: Npm install and build
         run: |
           npm ci
@@ -19,5 +23,6 @@ jobs:
       - name: Create production artifact
         uses: actions/upload-artifact@v2
         with:
-          name: dist-callisto
+          name: ${{PROJECT}}
           path: dist
+          retention-days: 1
