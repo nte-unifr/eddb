@@ -1,5 +1,7 @@
 name: Autobuild Callisto
-on: workflow_dispatch
+on:
+  schedule:
+    - cron:  '45 7,12,17 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
