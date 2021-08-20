@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: '14.x'
       - name: Set project env
-        run: mv ${{GITHUB_WORKSPACE}}.env.${{PROJECT}} .env
+        run: mv ${GITHUB_WORKSPACE}/.env.${PROJECT} .env
       - name: Npm install and build
         run: |
           npm ci
@@ -23,6 +23,6 @@ jobs:
       - name: Create production artifact
         uses: actions/upload-artifact@v2
         with:
-          name: ${{PROJECT}}
+          name: ${PROJECT}
           path: dist
           retention-days: 1
