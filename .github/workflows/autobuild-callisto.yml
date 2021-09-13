@@ -1,7 +1,7 @@
 name: Autobuild Callisto
 on:
   schedule:
-    - cron:  '45 7,12,17 * * *'
+    - cron:  '45 5,10,15 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
